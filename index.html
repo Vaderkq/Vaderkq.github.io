@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VADERKQ | Twitch Streamer</title>
+<meta name="theme-color" content="#090611">
+<style>
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background:#090611;
+  color:white;
+  font-family:Arial, sans-serif;
+  overflow-x:hidden;
+}
+body:before {
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 15%,#7025bc30,transparent 40%),
+    radial-gradient(circle at 10% 80%,#8c32ff15,transparent 30%);
+  z-index:-1;
+}
+header {
+  height:75px;
+  padding:0 8%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid #ffffff12;
+  background:#090611dc;
+  position:sticky;
+  top:0;
+  z-index:10;
+  backdrop-filter:blur(15px);
+}
+.logo {
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:3px;
+  color:#bb83ff;
+  text-shadow:0 0 20px #a64dff;
+}
+nav { display:flex; gap:30px; }
+nav a {
+  color:#c9c1d5;
+  text-decoration:none;
+  font-size:14px;
+  transition:.3s;
+}
+nav a:hover { color:#c084fc; }
+.hero {
+  min-height:440px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:80px 20px;
+}
+.hero .tag {
+  color:#c084fc;
+  border:1px solid #873bcb;
+  border-radius:30px;
+  padding:9px 20px;
+  font-size:12px;
+  letter-spacing:2px;
+  margin-bottom:25px;
+}
+.hero h1 {
+  font-size:clamp(55px,10vw,105px);
+  font-weight:1000;
+  letter-spacing:5px;
+  background:linear-gradient(90deg,#8c38ff,#e5c9ff,#a44cff);
+  -webkit-background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 0 25px #9e4cff55);
+}
+.hero p {
+  color:#aaa0b8;
+  margin-top:15px;
+  font-size:17px;
+  letter-spacing:2px;
+}
+.btn {
+  display:inline-block;
+  margin-top:30px;
+  padding:15px 30px;
+  border-radius:8px;
+  background:linear-gradient(90deg,#7727d8,#a64aff);
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 0 25px #9039df55;
+  transition:.3s;
+}
+.btn:hover { transform:translateY(-4px); box-shadow:0 0 35px #a64affaa; }
+section {
+  width:min(1050px,90%);
+  margin:40px auto 90px;
+}
+.section-title {
+  text-align:center;
+  font-size:28px;
+  margin-bottom:35px;
+  letter-spacing:3px;
+}
+.section-title span { color:#b36aff; }
+.stream-box {
+  background:#130e20;
+  border:1px solid #8e42c755;
+  border-radius:14px;
+  padding:12px;
+  box-shadow:0 0 35px #862cba22;
+}
+.stream {
+  width:100%;
+  aspect-ratio:16/9;
+  border:0;
+  border-radius:8px;
+  display:block;
+  background:#000;
+}
+.stream-note {
+  color:#91859f;
+  text-align:center;
+  padding:14px 5px 3px;
+  font-size:12px;
+}
+.socials {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:18px;
+}
+.social {
+  padding:25px 15px;
+  border:1px solid #7c3db544;
+  background:linear-gradient(145deg,#1b112b,#100c19);
+  border-radius:12px;
+  text-align:center;
+  color:white;
+  text-decoration:none;
+  transition:.3s;
+}
+.social:hover {
+  transform:translateY(-6px);
+  border-color:#bd79ff;
+  box-shadow:0 0 25px #a64aff33;
+}
+.social .icon { font-size:30px; margin-bottom:12px; }
+.social h3 { font-size:17px; }
+.social p { color:#9589a2; font-size:12px; margin-top:7px; }
+footer {
+  border-top:1px solid #ffffff15;
+  text-align:center;
+  padding:30px 15px;
+  color:#71677e;
+  font-size:12px;
+}
+footer span { color:#b46aff; }
+@media(max-width:600px) {
+  header { padding:0 5%; height:65px; }
+  nav { gap:12px; }
+  nav a { font-size:11px; }
+  .logo { font-size:20px; }
+  .hero { min-height:370px; }
+  section { margin-bottom:65px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">VADERKQ</div>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#stream">STREAM</a>
+    <a href="#socials">SOCIALS</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero" id="home">
+    <div class="tag">✦ OFFICIAL STREAMER WEBSITE ✦</div>
+    <h1>VADERKQ</h1>
+    <p>GAMING • STREAMING • COMMUNITY</p>
+    <a class="btn" href="#stream">▶ OGLĄDAJ STREAM</a>
+  </div>
+
+  <section id="stream">
+    <h2 class="section-title">LIVE <span>STREAM</span></h2>
+    <div class="stream-box">
+      <iframe
+        class="stream"
+        src="https://player.twitch.tv/?channel=Vaderkq&parent=localhost&autoplay=false"
+        allowfullscreen="true"
+        scrolling="no">
+      </iframe>
+      <div class="stream-note">
+        Oglądaj transmisje VADERKQ bezpośrednio na stronie!
+      </div>
+    </div>
+  </section>
+
+  <section id="socials">
+    <h2 class="section-title">MOJE <span>SOCIAL MEDIA</span></h2>
+    <div class="socials">
+
+      <!-- PODMIEŃ LINKI NA SWOJE -->
+
+      <a class="social"
+         href="https://twitch.tv/Vaderkq"
+         target="_blank" rel="noopener">
+        <div class="icon">🟣</div>
+        <h3>Twitch</h3>
+        <p>Wpadnij na stream!</p>
+      </a>
+
+      <a class="social" href="#"
+         target="_blank" rel="noopener">
+        <div class="icon">🎵</div>
+        <h3>TikTok</h3>
+        <p>Moje TikToki</p>
+      </a>
+
+      <a class="social" href="#"
+         target="_blank" rel="noopener">
+        <div class="icon">▶️</div>
+        <h3>YouTube</h3>
+        <p>Filmy i materiały</p>
+      </a>
+
+      <a class="social" href="#"
+         target="_blank" rel="noopener">
+        <div class="icon">💬</div>
+        <h3>Discord</h3>
+        <p>Dołącz do społeczności</p>
+      </a>
+
+      <a class="social" href="#"
+         target="_blank" rel="noopener">
+        <div class="icon">📸</div>
+        <h3>Instagram</h3>
+        <p>Znajdź mnie tutaj</p>
+      </a>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 <span>VADERKQ</span> — ALL RIGHTS RESERVED
+</footer>
+
+</body>
+</html>
